@@ -12,25 +12,24 @@
   </div>
 </div>
 
-<%= form_for(@message, html: {class: 'form-horizontal'}) do |f| %>
-  <div class="row container-fluid row-margin">
+<%= form_for(@message, html: {class: 'none'}) do |f| %>
+  <div class="form-group">
     <div class="input-group">
       <span for="message_name" class="input-group-addon">名前</span>
       <%= f.text_field :name, class: "form-control" %>
     </div>
   </div>
-    
-  <div class="row container-fluid row-margin">
+
+  <div class="form-group">
     <div class="input-group">
       <span for="message_body" class="input-group-addon">本文</span>
       <%= f.text_area :body, class: "form-control" %>
     </div>
   </div>
   
-  <div class="row container-fluid">
+  <div class="form-group">
       <%= f.submit class: "btn btn-sm btn-primary" %>
   </div>
-    
   
 <% end %>
 
