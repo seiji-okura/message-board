@@ -13,17 +13,24 @@
 </div>
 
 <%= form_for(@message, html: {class: 'form-horizontal'}) do |f| %>
-  <div class="row">
-    
-    <div class="form-group col-sm-12 controls form-inline">
-      <label for="message_name" class="control-label label label-info inside col-height col-top" >名前</label>
-      <%= f.text_field :name, class: "form-control inside col-height col-top", size: "10",style:"vertical-align:top;" %>
-      <label for="message_body" class="control-label label label-info inside col-height col-top">本文</label>
-      <%= f.text_area :body, class: "form-control",cols: "80", rows: "3", style:"vertical-align:top;"  %>
-      <%= f.submit class: "btn btn-sm btn-primary inside col-height col-top", style: "vertical-align:top;" %>
-    </div>  
- 
-    
+  <div class="row container-fluid row-margin">
+    <div class="input-group">
+      <span for="message_name" class="input-group-addon">名前</span>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
   </div>
+    
+  <div class="row container-fluid row-margin">
+    <div class="input-group">
+      <span for="message_body" class="input-group-addon">本文</span>
+      <%= f.text_area :body, class: "form-control" %>
+    </div>
+  </div>
+  
+  <div class="row container-fluid">
+      <%= f.submit class: "btn btn-sm btn-primary" %>
+  </div>
+    
+  
 <% end %>
 
