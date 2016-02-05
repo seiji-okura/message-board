@@ -13,6 +13,18 @@
 </div>
 
 <%= form_for(@message, html: {class: 'none'}) do |f| %>
+  <% if @message.errors.present? %>
+    <div class="alert alert-danger">
+      <%= alert %>
+      <ul>
+        <% @message.errors.full_messages.each do |full_message| %>
+          <li>
+            <%= full_message %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="form-group">
     <div class="input-group">
       <span for="message_name" class="input-group-addon">名前</span>
