@@ -11,8 +11,8 @@ class Message < ActiveRecord::Base
   
   #18歳未満はNG
   def age_validation
-    if age < 18
-      errors[:base] << "%{year}年ROMってろ！" %{year: (18 - age)}
+    if !age.nil? && age < 18
+      errors[:base] << "%{year}年ROMってろ！" % {year: (18 - age)}
     end
   end
   

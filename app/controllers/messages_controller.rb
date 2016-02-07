@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
   end
   
   def create
-    binding.pry
+    #binding.pry
     @message = Message.new(message_params)
     if @message.save
       redirect_to root_path, notice:'メッセージを保存しました'
